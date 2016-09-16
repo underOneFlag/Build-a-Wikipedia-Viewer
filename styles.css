@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #0c2c42;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+body {
+    display: table;
+}
+
+body > :not(header):not(script) {
+    display: table-row;
+}
+
+a {
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden { display: none; }
+
+header.hidden + main:before {
+    content: '\200B';
+    line-height: 30px;
+}
+
+header.hidden + main > section:first-of-type :last-child  {
+    display: none;
+}
+
+section a {
+    display: block;
+    color: inherit;
+    margin: 0 auto;
+}
+
+icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 30px auto;
+    vertical-align: middle;
+    border: 4px #eb6f05 solid;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: width .2s;
+}
+
+icon:hover {
+    transition: width .1s .1s;
+    width: 260px;
+}
+
+icon:before {
+    width: 4px;
+    height: 16px;
+    background-color: #eb6f05;
+    content: '';
+    position: absolute;
+    transform: rotate(-45deg);
+    margin: 28px 0 0 16px;
+    transition: height .1s .2s;
+}
+
+icon:hover:before {
+    transition: height, margin .1s;
+    margin: 28px 0 0 8px;
+    height: 0;
+}
+
+icon:not(.hidden) + input {
+    display: none;
+}
+
+icon.hidden + input + button {
+    display: inline-block;
+}
+
+input {
+    background: none;
+    color: white;
+    height: 40px;
+    margin: 30px 0;
+    border: 4px #eb6f05 solid;
+    border-radius: 30px;
+    padding: 0 30px 0 15px;
+    outline: none;
+    width: 260px;
+}
+
+button {
+    width: 20px;
+    height: 20px;
+    border: 20px;
+    color: #eb6f05;
+    border-radius: 50%;
+    outline: none;
+    position: absolute;
+    line-height: 20px;
+    margin: 40px 0 0 -30px;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+@keyframes rise {
+    from { opacity: 0; margin-top: 400px; }
+    to { opacity: 1; margin-top: 8px; }
+}
+
+.wiki {
+    width: 80%;
+    display: block;
+    background-color: #e6e6e6;
+    margin: 8px auto;
+    text-align: left;
+    color: black;
+    animation: rise 1s;
+}
+
+.wiki:hover {
+    box-shadow: -5px 0 #eb6f05;
+}
+
+.wiki :first-child {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 30px;
+    padding-top: 25px;
+}
+
+.wiki :last-child {
+    margin: 0 30px;
+    padding: 20px 0;
+}
+
+footer {
+    height: 1px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+footer :first-child {
+    margin-top: 10px;
+}
+
+footer :last-child {
+    margin-bottom: 10px;
+}
+
+footer a { font-size: inherit; }
+
+footer a:hover { color: white; }
