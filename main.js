@@ -7,6 +7,7 @@ _uOF.get = (query, cb) => {
   xhr.onload = () => cb(null, xhr.responseText);
   xhr.onerror = (err) => cb(err);
   xhr.open('GET', url);
+  xhr.setRequestHeader('Origin', location.origin);
   xhr.send();
 };
 
