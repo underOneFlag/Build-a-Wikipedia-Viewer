@@ -2,7 +2,7 @@ const _uOF = {};
 
 _uOF.get = (query, cb) => {
 	const url = 'https://en.wikipedia.org/w/api.php?action=opensearch' +
-							'&search=' + query + '&limit=10&format=json';
+							'&search=' + query + '&limit=10&format=json&callback=?';
   const xhr = new XMLHttpRequest();
   xhr.onload = () => cb(null, xhr.responseText);
   xhr.onerror = (err) => cb(err);
